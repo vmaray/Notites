@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name" translatable="false">Notites</string>
+    <string name="btn_addNote_txt">Nueva nota</string>
+    <string name="btn_config_txt">Ajustes de la aplicación</string>
+    <string name="h1_AddNotes">Nueva nota</string>
+    <string name="btn_saveNote_txt">Guardar nota</string>
+    <string name="txtInput_AddNote">Escribe tu nota aquí…</string>
+    <string name="btn_cancel_txt">Cancelar</string>
+
+</resources>
