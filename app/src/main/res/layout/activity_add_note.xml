@@ -7,6 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".AddNoteActivity">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/background"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg" />
+
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar"
         android:layout_width="0dp"
@@ -19,28 +27,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/icon_toolbar"
+        android:layout_width="35dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/app_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/materialToolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/notites_logo" />
+
     <TextView
         android:id="@+id/txtApp_main"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="casual"
         android:letterSpacing=".05"
         android:text="@string/app_name"
         android:textColor="#FFFFFF"
         android:textSize="35sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/materialToolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/materialToolbar"
+        app:layout_constraintStart_toEndOf="@+id/icon_toolbar"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSave_addNote"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
+        android:width="320dp"
         android:contentDescription="@string/btn_saveNote_txt"
         android:pointerIcon="none"
         android:text="@string/btn_saveNote_txt"
@@ -55,11 +79,12 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnCancel_addNote"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
+        android:width="320dp"
         android:contentDescription="@string/btn_cancel_txt"
         android:pointerIcon="none"
         android:text="@string/btn_cancel_txt"
@@ -76,7 +101,9 @@
         android:id="@+id/textView_h1_AddNote"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
         android:padding="16dp"
         android:text="@string/h1_AddNotes"
         android:textAlignment="textStart"
@@ -84,26 +111,33 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar"
-        tools:ignore="VisualLintBounds" />
+        app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout_newNote"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
+        android:minHeight="100dp"
         app:boxBackgroundColor="#E3F2FD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_h1_AddNote">
+        app:layout_constraintTop_toBottomOf="@+id/textView_h1_AddNote"
+        tools:layout_width="320dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/TextInputEditText_newNote"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:width="320dp"
+            android:backgroundTint="#7AFFFFFF"
             android:hint="@string/txtInput_AddNote"
+            android:minHeight="100dp"
+            android:textColor="#000000"
             android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

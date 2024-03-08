@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".NoteInfoActivity">
 
     <ImageView
         android:id="@+id/bg"
@@ -13,9 +13,7 @@
         android:layout_height="match_parent"
         android:contentDescription="@string/background"
         android:scaleType="centerCrop"
-        android:src="@drawable/bg"
-        tools:layout_editor_absoluteX="-29dp"
-        tools:layout_editor_absoluteY="0dp" />
+        android:src="@drawable/bg" />
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar"
@@ -59,57 +57,78 @@
         app:layout_constraintStart_toEndOf="@+id/icon_toolbar"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnConfig_main"
-        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:contentDescription="@string/btn_config_txt"
-        android:pointerIcon="none"
-        app:icon="@drawable/baseline_more_vert_24"
-        app:iconSize="35dp"
-        app:iconTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/materialToolbar"
-        app:layout_constraintEnd_toEndOf="@+id/materialToolbar"
-        app:layout_constraintTop_toTopOf="@+id/materialToolbar">
-
-    </com.google.android.material.button.MaterialButton>
-
-    <ListView
-        android:id="@+id/ListView_main"
+    <TextView
+        android:id="@+id/h1_NoteInfo"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/h1_NoteInfo"
+        android:textSize="26sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/materialToolbar" />
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_NoteInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/design_default_color_background"
+        app:cardCornerRadius="24dp"
+        app:layout_constraintEnd_toEndOf="@+id/bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/h1_NoteInfo">
+
+        <TextView
+            android:id="@+id/txt_NoteInfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:textSize="16sp" />
+    </androidx.cardview.widget.CardView>
+
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnAddNote_main"
-        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+        android:id="@+id/btnDeleteNote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
-        android:contentDescription="@string/btn_addNote_txt"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:width="320dp"
+        android:contentDescription="@string/btn_DeleteNote"
         android:pointerIcon="none"
-        android:text="@string/btn_addNote_txt"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/material_dynamic_primary20"
-        app:icon="@drawable/baseline_add_24"
-        app:iconSize="35dp"
-        app:iconTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/btn_DeleteNote"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:backgroundTint="?attr/colorError"
         app:layout_constraintEnd_toEndOf="parent"
-        app:cornerRadius="32dp">
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_NoteInfo">
     </com.google.android.material.button.MaterialButton>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCancel_NoteInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:width="320dp"
+        android:contentDescription="@string/btn_cancel_txt"
+        android:pointerIcon="none"
+        android:text="@string/btn_cancel_txt"
+        android:textAlignment="center"
+        app:backgroundTint="@color/material_dynamic_neutral10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDeleteNote">
+    </com.google.android.material.button.MaterialButton>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
