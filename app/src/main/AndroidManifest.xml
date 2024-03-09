@@ -11,8 +11,7 @@
         android:roundIcon="@drawable/notites_logo"
         android:supportsRtl="true"
         android:theme="@style/Base.Theme.Notites"
-        tools:targetApi="31"
-        android:locale="es">
+        tools:targetApi="31">
 
         <activity
             android:name=".NoteInfoActivity"
