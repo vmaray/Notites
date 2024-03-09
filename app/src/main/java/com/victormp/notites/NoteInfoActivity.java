@@ -51,7 +51,7 @@ public class NoteInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 db.deleteNote(note_id);
-                Toast.makeText(NoteInfoActivity.this, "Nota borrada correctamente", Toast.LENGTH_SHORT).show();
+                Toast.makeText(NoteInfoActivity.this, getText(R.string.toast_DeleteNote), Toast.LENGTH_SHORT).show();
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -61,6 +61,15 @@ public class NoteInfoActivity extends AppCompatActivity {
                         finish();
                     }
                 }, 2000);
+            }
+        });
+
+        // Cancelar y retroceder a inicio
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                backToMain = new Intent(NoteInfoActivity.this, MainActivity.class);
+                startActivity(backToMain);
             }
         });
     }

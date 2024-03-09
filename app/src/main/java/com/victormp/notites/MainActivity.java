@@ -3,19 +3,20 @@ package com.victormp.notites;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
-
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
+
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
     private Intent noteInfo;
     protected DataBaseSQL db;
 
+    private ArrayAdapter<String> adapter;
+    private ArrayList<String> all_notes;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,9 +52,10 @@ public class MainActivity extends AppCompatActivity {
         btnAddNote = findViewById(R.id.btnAddNote_main);
         btnConfig = findViewById(R.id.btnConfig_main);
 
-        ArrayList<String> all_notes = db.getAllNotes();
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, all_notes);
+        all_notes = new ArrayList<>();
+        adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, all_notes);
         listView.setAdapter(adapter);
+
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -78,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(config);
             }
         });
+
         btnAddNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -86,4 +92,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateNoteList();
+    }
+
+    // Método para actualizar la lista de notas
+    private void updateNoteList() {
+        all_notes.clear();
+        all_notes.addAll(db.getAllNotes());
+        adapter.notifyDataSetChanged();
+    }
 }
+

@@ -7,14 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".NoteInfoActivity">
 
-    <ImageView
-        android:id="@+id/bg"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/background"
-        android:scaleType="centerCrop"
-        android:src="@drawable/bg" />
-
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar"
         android:layout_width="0dp"
@@ -78,9 +70,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:backgroundTint="@color/design_default_color_background"
         app:cardCornerRadius="24dp"
-        app:layout_constraintEnd_toEndOf="@+id/bg"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/h1_NoteInfo">
 
@@ -97,19 +88,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:width="320dp"
         android:contentDescription="@string/btn_DeleteNote"
         android:pointerIcon="none"
         android:text="@string/btn_DeleteNote"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="20sp"
-        app:backgroundTint="?attr/colorError"
+        app:backgroundTint="@color/design_default_color_error"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_NoteInfo">
-    </com.google.android.material.button.MaterialButton>
+        app:layout_constraintTop_toBottomOf="@+id/card_NoteInfo"
+        app:cornerRadius="24dp"/>
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnCancel_NoteInfo"
@@ -123,12 +116,13 @@
         android:pointerIcon="none"
         android:text="@string/btn_cancel_txt"
         android:textAlignment="center"
+        android:textColor="@color/white"
         app:backgroundTint="@color/material_dynamic_neutral10"
+        app:cornerRadius="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDeleteNote">
-    </com.google.android.material.button.MaterialButton>
+        app:layout_constraintTop_toBottomOf="@+id/btnDeleteNote" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

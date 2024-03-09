@@ -36,12 +36,6 @@ public class DataBaseSQL extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO " + TABLE_NOTES + " (nota) VALUES ('"+note+"')");
     }
 
-    // Retorna la longuitud de la tabla 'Notas'
-    public int lengthNotes() {
-        db = this.getReadableDatabase();
-        return (int) DatabaseUtils.queryNumEntries(db, TABLE_NOTES);
-    }
-
     // Mostrar todas las notas
     public ArrayList<String> getAllNotes() {
         ArrayList<String> all_notes = new ArrayList<>();
@@ -73,6 +67,7 @@ public class DataBaseSQL extends SQLiteOpenHelper {
     public void deleteAllNotes() {
         db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_NOTES);
+        db.execSQL("DELETE FROM SQLITE_SEQUENCE WHERE NAME = '" + TABLE_NOTES + "'"); // Restablecer el contador del ID
     }
 
 

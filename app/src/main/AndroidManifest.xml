@@ -10,8 +10,10 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/notites_logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Material3.DayNight.NoActionBar"
-        tools:targetApi="31">
+        android:theme="@style/Base.Theme.Notites"
+        tools:targetApi="31"
+        android:locale="es">
+
         <activity
             android:name=".NoteInfoActivity"
             android:exported="false" />

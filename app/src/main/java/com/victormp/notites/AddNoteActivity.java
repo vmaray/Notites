@@ -4,15 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 public class AddNoteActivity extends AppCompatActivity {
     protected MaterialButton btnSaveNote;
@@ -41,11 +38,11 @@ public class AddNoteActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (inputContent != null) {
-                    String new_note = inputContent.getText().toString();
+                    String new_note = inputContent.getText().toString().trim();
 
                     if (!new_note.isEmpty()) {
                         db.addNote(new_note);
-                        Toast.makeText(AddNoteActivity.this, "Nota creada correctamente", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddNoteActivity.this, getText(R.string.toast_AddNote), Toast.LENGTH_SHORT).show();
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
@@ -56,7 +53,7 @@ public class AddNoteActivity extends AppCompatActivity {
                             }
                         }, 2000);
                     } else {
-                        Toast.makeText(AddNoteActivity.this, "Nota obligatoria", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddNoteActivity.this, getText(R.string.toast_MissingNote), Toast.LENGTH_SHORT).show();
                     }
                 }
             }

@@ -1,19 +1,21 @@
 <resources>
-    <string name="app_name" translatable="false">Notites</string>
-    <string name="btn_addNote_txt">Nueva nota</string>
-    <string name="btn_config_txt">Ajustes de la aplicación</string>
-    <string name="h1_AddNotes">Nueva nota</string>
-    <string name="btn_saveNote_txt">Guardar nota</string>
-    <string name="txtInput_AddNote">Escribe tu nota aquí…</string>
-    <string name="btn_cancel_txt">Cancelar</string>
-    <string name="app_icon">Notites icono</string>
+    <string name="btn_addNote_txt">New note</string>
+    <string name="btn_config_txt">App settings</string>
+    <string name="h1_AddNotes">New note</string>
+    <string name="btn_saveNote_txt">Save note</string>
+    <string name="txtInput_AddNote">Write your note here…</string>
+    <string name="btn_cancel_txt">Cancel</string>
+    <string name="app_icon">Notites icon</string>
+    <string name="background">Background</string>
+    <string name="btn_deleteAllNotes">Delete ALL notes</string>
+    <string name="txt_deleteAllNotes">Are you sure you want to delete all notes?</string>
+    <string name="h1_NoteInfo">Note information</string>
+    <string name="btn_DeleteNote">Delete note</string>
+
+    <string name="toast_DeleteNote">Note deleted successfully</string>
+    <string name="toast_AddNote">Note created successfully</string>
+    <string name="toast_MissingNote">Note required</string>
+    <string name="app_name">Notites</string>
     <string name="app_dev">Víctor Muñoz</string>
-    <string name="background">fondo de pantalla</string>
-    <string name="failed_add">Nota obligatoria</string>
-    <string name="successful_add">Nota creada correctamente</string>
-    <string name="btn_deleteAllNotes">Eliminar TODAS las notas</string>
-    <string name="txt_deleteAllNotes">¿Estás seguro de que quieres eliminar todas las notas?</string>
-    <string name="h1_NoteInfo">Información de la nota</string>
-    <string name="btn_DeleteNote">Borrar nota</string>
 
 </resources>
