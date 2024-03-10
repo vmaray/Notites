@@ -17,5 +17,6 @@
     <string name="toast_MissingNote">Nota obligatòria</string>
     <string name="app_name">Notites</string>
     <string name="app_dev">Víctor Muñoz</string>
+    <string name="toast_DeleteAllNotes">S\'han eliminat totes les notes correctament.</string>
 
 </resources>

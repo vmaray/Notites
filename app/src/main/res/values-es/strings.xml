@@ -17,5 +17,6 @@
     <string name="toast_DeleteNote">Nota borrada correctamente</string>
     <string name="toast_AddNote">Nota creada correctamente</string>
     <string name="toast_MissingNote">Nota obligatoria</string>
+    <string name="toast_DeleteAllNotes">Se han borrado todas las notas correctamente</string>
 
 </resources>

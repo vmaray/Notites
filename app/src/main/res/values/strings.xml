@@ -15,6 +15,7 @@
     <string name="toast_DeleteNote">Note deleted successfully</string>
     <string name="toast_AddNote">Note created successfully</string>
     <string name="toast_MissingNote">Note required</string>
+    <string name="toast_DeleteAllNotes">All notes have been deleted successfully</string>
     <string name="app_name">Notites</string>
     <string name="app_dev">Víctor Muñoz</string>
 

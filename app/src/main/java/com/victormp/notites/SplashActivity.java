@@ -6,36 +6,32 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 @SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
-
+    // Definición de elementos de la interfaz de usuario
     protected TextView txt_splash;
-
+    // Definición del intent de cambio de actividad
     private Intent splashToMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        // Inicialización de los elementos de la interfaz de usuario
+        txt_splash = (TextView) findViewById(R.id.txtApp_splash);
+
+        // Avanza a la pantalla principal automáticamente después de 2 segundos
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent splashToMain = new Intent(SplashActivity.this, MainActivity.class);
+                // Crea un intent para ir a la actividad principal y finaliza la actividad actual
+                splashToMain = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(splashToMain);
                 finish();
             }
-        }, 2000);
-
-        txt_splash = (TextView) findViewById(R.id.txtApp_splash);
-
+        }, 2000); // 2000 milisegundos (2 segundos)
     }
 }
